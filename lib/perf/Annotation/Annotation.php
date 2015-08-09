@@ -55,7 +55,7 @@ class Annotation
             }
         }
 
-        if (!is_null($suffix) && !is_string($suffix)) {
+        if ((null !== $suffix) && !is_string($suffix)) {
             throw new \InvalidArgumentException("Provided suffix is neither null nor a string.");
         }
 
@@ -132,6 +132,6 @@ class Annotation
      */
     public function hasSuffix()
     {
-        return !is_null($this->suffix);
+        return (null !== $this->suffix);
     }
 }
